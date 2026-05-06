@@ -1,0 +1,58 @@
+/* ── Reset & Base ──── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  background: #08080a;
+  color: #e0e0e0;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+/* ── Scrollbar ── */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: #08080a; }
+::-webkit-scrollbar-thumb  { background: #6366f1; border-radius: 2px; }
+ 
+/* ── Animations ──── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+ 
+@keyframes blink {
+  50% { opacity: 0; }
+}
+ 
+/* ── Responsive helpers ──── */
+@media (max-width: 768px) {
+  .project-card-grid {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+    gap: 24px !important;
+  }
+ 
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+ 
+  .nav-links {
+    display: none !important;
+  }
+ 
+  .menu-btn {
+    display: block !important;
+  }
+ 
+  .hero-avatar {
+    display: none !important;
+  }
+}
