@@ -274,7 +274,7 @@ export default function Hero() {
           }}
         >
           <img
-            src="src/assets/Aakriti-Avatar.png"
+            src="/Aakriti-Avatar.png"
             alt="Aakriti cartoon avatar"
             style={{
               //width: "100%",
