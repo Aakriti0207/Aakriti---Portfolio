@@ -1,101 +1,120 @@
-# Aakriti Arya — Portfolio
-
-Personal portfolio website built with React + Vite.
-
-## 🚀 Quick Start
-
-```bash
-# 1. Install dependencies
-npm install
-
-# 2. Start dev server
-npm run dev
-
-# 3. Open in browser
-# → http://localhost:5173
-```
-
-## 📦 Build for Production
-
-```bash
-npm run build       # outputs to /dist
-npm run preview     # preview the production build locally
-```
-
-## 🌐 Deploy to Vercel
-
-```bash
-npm install -g vercel
-vercel
-```
-
-Or connect your GitHub repo on vercel.com — it auto-detects Vite.
-
+# Aakriti Arya — Personal Portfolio
+ 
+> **Live:** [aakriti-arya-portfolio.vercel.app](https://aakriti-arya-portfolio.vercel.app)
+ 
+A clean, minimal personal portfolio website built with React + Vite. Designed to showcase projects, skills, and achievements for internship applications.
+ 
 ---
+ 
+## Preview
+ 
+<img width="1919" height="912" alt="image" src="https://github.com/user-attachments/assets/6e3fa6b1-d0fb-4801-b9a4-2aa712393446" />
 
-## 📁 Folder Structure
-
+ 
+---
+ 
+## Features
+ 
+- **Animated Typing Effect** — Name types out in a smooth looping sequence
+- **Live Project Previews** — Real iframe embeds of deployed projects inside a browser frame
+- **Smooth Scroll Animations** — Sections fade/slide in on scroll using IntersectionObserver
+- **Dark Minimal Design** — Black background, Indigo accent, Playfair Display + DM Mono typography
+- **Fully Responsive** — Mobile-first, collapses gracefully on all screen sizes
+- **Fixed Navbar** — Blurs on scroll, highlights active section automatically
+---
+ 
+## Tech Stack
+ 
+| Category | Tools |
+|---|---|
+| Framework | React 18 |
+| Build Tool | Vite 5 |
+| Styling | Inline styles + CSS Modules |
+| Fonts | Playfair Display, DM Mono (Google Fonts) |
+| Deployment | Vercel |
+ 
+---
+ 
+## Project Structure
+ 
 ```
 aakriti-portfolio/
-├── index.html                  # HTML entry point (fonts loaded here)
+├── public/
+│   ├── Aakriti-Avatar.png     # Cartoon avatar (hero section)
+│   └── FaviconAA.png          # Browser tab icon
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx         # Fixed nav with blur + active link tracking
+│   │   ├── Hero.jsx           # Landing section with typing effect + avatar
+│   │   ├── Projects.jsx       # Section wrapper
+│   │   ├── ProjectCard.jsx    # Alternating left/right project layout
+│   │   ├── LivePreview.jsx    # iframe browser frame with fallback
+│   │   ├── Skills.jsx         # Categorised skill cards
+│   │   ├── About.jsx          # Bio + achievement cards
+│   │   ├── Contact.jsx        # Email, LinkedIn, GitHub links
+│   │   └── SectionLabel.jsx   # Reusable section heading component
+│   ├── data/
+│   │   ├── projects.js        # All project info — edit here to add projects
+│   │   └── skills.js          # Skills by category
+│   ├── hooks/
+│   │   └── useInView.js       # Scroll animation hook (IntersectionObserver)
+│   ├── styles/
+│   │   └── global.css         # Reset, scrollbar, keyframes, responsive
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
 ├── vite.config.js
-├── package.json
-└── src/
-    ├── main.jsx                # React root
-    ├── App.jsx                 # Root component, active-section tracker
-    ├── styles/
-    │   └── global.css          # Reset, scrollbar, keyframes, responsive
-    ├── data/
-    │   ├── projects.js         # All project data (title, URLs, stack, color…)
-    │   └── skills.js           # Skills by category
-    ├── hooks/
-    │   └── useInView.js        # IntersectionObserver hook for scroll animations
-    └── components/
-        ├── Navbar.jsx          # Fixed top nav, blur-on-scroll, mobile hamburger
-        ├── Hero.jsx            # Landing section with stats + CTAs
-        ├── Projects.jsx        # Section wrapper — maps PROJECTS → ProjectCard
-        ├── ProjectCard.jsx     # Alternating left/right layout per project
-        ├── LivePreview.jsx     # iframe browser frame with loading/blocked states
-        ├── Skills.jsx          # Categorised skill cards
-        ├── About.jsx           # Bio + achievement cards
-        ├── Contact.jsx         # Email / LinkedIn / GitHub link cards
-        └── SectionLabel.jsx    # Reusable eyebrow label + heading
+└── package.json
 ```
-
+ 
 ---
-
-## 🖼 Live Preview (iframe) Notes
-
-The `LivePreview` component tries to embed your deployed project URLs.
-Whether it works depends on the headers your Vercel apps send.
-
-**To enable iframe embedding**, add this to each project's `vercel.json`:
-
-```json
-{
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Frame-Options", "value": "ALLOWALL" }
-      ]
-    }
-  ]
-}
+ 
+## Getting Started
+ 
+```bash
+# 1. Clone the repo
+git clone https://github.com/Aakriti0207/Aakriti---Portfolio.git
+cd Aakriti---Portfolio
+ 
+# 2. Install dependencies
+npm install
+ 
+# 3. Start dev server
+npm run dev
+# → http://localhost:5173
+ 
+# 4. Build for production
+npm run build
 ```
-
-If a site blocks embedding, `LivePreview` shows a clean fallback with an
-"Open Live Site ↗" button after 6 seconds.
-
+ 
 ---
-
-## ✏️ Customisation
-
-| What to change | File |
+ 
+## Customisation
+ 
+| What to update | File |
 |---|---|
-| Project data, URLs, GitHub links | `src/data/projects.js` |
+| Projects (title, links, stack) | `src/data/projects.js` |
 | Skills list | `src/data/skills.js` |
-| Bio text, achievements | `src/components/About.jsx` |
+| Bio & achievements | `src/components/About.jsx` |
 | Contact links | `src/components/Contact.jsx` |
-| Accent color (`#6366f1`) | Search & replace across components |
-| Fonts | `index.html` Google Fonts link + component `fontFamily` strings |
+| Resume link | `src/components/Hero.jsx` |
+| Avatar image | `public/Aakriti-Avatar.png` |
+ 
+---
+ 
+## Deployment
+ 
+Deployed on **Vercel** with automatic deployments on every push to `main`.
+ 
+To deploy your own fork:
+1. Push to GitHub
+2. Import repo on [vercel.com](https://vercel.com)
+3. Framework: **Vite** — Vercel auto-detects it
+4. Done! 🚀
+---
+ 
+## Author
+ 
+**Aakriti Arya**  
+B.Tech Computer Science @ BPIT (2024–28)  
+[LinkedIn](https://linkedin.com/in/aakriti-arya) · [GitHub](https://github.com/Aakriti0207) · [Portfolio](https://aakriti-arya-portfolio.vercel.app)
